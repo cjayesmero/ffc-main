@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>OPERATIONAL GUIDE</title>
+
+  <style>
+
+    .navbar {
+      background: rgba(4, 2, 26, 0.7);
+      padding: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: white;
+      position: fixed;
+      width: 100%;
+      z-index: 1000;
+    }
+
+    .logo img {
+      width: 50px;
+      height: 50px;
+      margin-left: 10px;
+    
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 50px;
+      margin-right: 500px;
+    }
+
+    .nav-links a {
+      color: white;
+      font-family: arial;
+      text-decoration: none;
+
+    }
+
+    .nav-links a:hover {
+      color: #7ecbff;
+      
+    }
+
+    .nav-links a:active{
+      color: #5541db;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f5f5f5;
+      color: #333;
+    }
+
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: white;
+      padding: 2rem;
+    }
+
+    .header-text {
+      max-width: 50%;
+    }
+
+    .header-text h1 {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .header-text p {
+      font-size: 1rem;
+      color: #555;
+    }
+
+    .faq-illustration {
+      width: 200px;
+      margin-right: 150px;
+    }
+
+    .container {
+      display: flex;
+      padding: 2rem;
+      gap: 3rem;
+    }
+
+    .sidebar {
+      width: 200px;
+    }
+
+    .sidebar a {
+      display: block;
+      color: #0071c2;
+      text-decoration: none;
+      margin-bottom: 1rem;
+      font-weight: bold;
+    }
+
+    .faq-section {
+      flex: 1;
+    }
+
+    .faq-section h2 {
+      margin-bottom: 1rem;
+    }
+
+    .faq-item {
+      background-color: white;
+      margin-bottom: 1rem;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+
+    .faq-question {
+      padding: 1rem;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .faq-answer {
+      display: none;
+      padding: 5px;
+      border-top: 1px solid #ddd;
+    }
+
+    .faq-item.open .faq-answer {
+      display: block;
+    }
+    .sidebar a.active {
+     background-color: #0071c2;
+     color: white;
+     padding: 0.4rem;
+     border-radius: 5px;
+    }
+    .operatinal-section {
+     flex: 1;
+    }
+    .og-item {
+     background-color: white;
+     margin-bottom: 1r;
+     border: 1px solid #ddd;
+     border-radius: 5px;
+    }
+    .og-question {
+      padding: 1rem;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    .og-answer {
+      display: none;
+      padding: 5px;
+      border-top: 1px solid #ddd;
+    }
+    .og-item.open .og-answer {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="navbar">
+    <div class="logo">
+      <img src="ctu.png" alt="Logo" />
+    </div>
+    <div class="nav-links">
+      <a href="index.html"class="active">Home</a>
+      <a href="index.html">About</a>
+      <a href="index.html">Product</a>
+      <a href="index.html">Features</a>
+      <a href="index.html">Video</a>
+      <a href="faqs.html"class="active">FAQS</a>
+      <a href="contact.html">Contacts</a>
+    </div>
+  </div>
+
+  <div class="header">
+    <div class="header-text">
+      <h1>FAQs</h1>
+      <p>Have questions? Here you’ll know more about the device, along with access to step-by-step instructions and support.</p>
+    </div>
+    <img src="marks.png" alt="FAQ Illustration" class="faq-illustration">
+  </div>
+
+  <div class="container">
+    <div class="sidebar">
+      <a href="faqs.html">FAQs</a>
+      <a href="operational.html" class="active">Operational Guides</a>
+      <a href="maintenance.html">Maintenance Guide</a>
+      <a href="troubleshooting.html">Troubleshooting</a>
+   
+    </div>
+    <div class="operational-section">
+      <h2>Operational Guides</h2>
+
+      <div class="og-item"> 
+       <div class="og-question">I. Electrical Wiring Connection</div>
+       <div class="og-answer">Step 1: In the top section of the device, lift the top cover of the control box. 
+        Step 2: Carefully place the batteries on the battery holders. 
+        Step 3: Attach the two propellers to each designated connector. 
+        Step 4: Turn on the three switches located inside and outside of the control box. 
+        Step 5: Close the  control box.</div>
+
+        <div class="og-item">
+          <div class="og-question">II. Operating the Device</div>
+          <div class="og-answer">Step 1: Turn on Bluetooth in the phone settings. 
+            Step 2: Check the “ available devices” on the Bluetooth. Choose the device name “HC-05”.
+           Step 3: Enter the passcode (1234) and pair.
+           Step 4: Open the app and go to the “ Bluetooth devices”. 
+           Step 5: Find the name of the device “ HC-05” and Connect.
+           Step 6: Check the indicator or listen to the sound. If the light turns on, it means it's connected. If not, go back to step 1. </div>
+        </div>
+      </div>
+  </div>
+
+  <script>
+    const ogItems = document.querySelectorAll('.og-item');
+
+    ogItems.forEach(item => {
+      item.querySelector('.og-question').addEventListener('click', () => {
+        item.classList.toggle('open');
+      });
+    });
+  </script>
+
+</body>
+</html>
